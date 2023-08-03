@@ -7,14 +7,17 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 
-export const Navbar = ({handleSearchProduct}) => {
+export const Navbar = ({searchProps}) => {
+
+  const {handleSearchInput, handleSearchButton, searchInput} = searchProps;
+
   return (
     <div className="navbar">
       <Link to="/">
         <img src={logo} alt="logo" />
       </Link>
-      <form className="search-bar">
-        <input type="text" placeholder="search..." onChange={handleSearchProduct}/>
+      <form onSubmit={handleSearchButton} className="search-bar">
+        <input type="text" value={searchInput} placeholder="search..." onChange={handleSearchInput}/>
         <button type="submit">
           <FontAwesomeIcon className="icon" icon={faMagnifyingGlass} />
         </button>

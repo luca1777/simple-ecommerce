@@ -7,18 +7,31 @@ import { Cart } from './pages/cart/cart';
 import { ShopContextProvider } from './context/shop-context';
 
 function App() {
+  const [searchInput, setSearchInput] = useState("");
   const [searchProduct, setSearchProduct] = useState(""); 
 
 
-  const handleSearchProduct = (event) => {
-    setSearchProduct(event.target.value)
+  const handleSearchInput = (event) => {
+    setSearchInput(event.target.value)
   }
+
+  const handleSearchButton = (event) => {
+    event.preventDefault();
+    setSearchProduct(searchInput);
+  }
+
+  const searchProps = {
+    searchInput,
+    handleSearchInput,
+    handleSearchButton
+  }
+
 
   return (
     <div className="App">
       <ShopContextProvider>
         <Router>
-          <Navbar handleSearchProduct={handleSearchProduct} />
+          <Navbar searchProps={searchProps} />
           <Routes>
             <Route path="/" element={<Shop searchProduct={searchProduct} />} />
             <Route path="/cart" element={<Cart />} />
