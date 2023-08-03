@@ -2,14 +2,15 @@ import React from 'react';
 import { PRODUCTS } from '../../products';
 import { Product } from './product';
 import "./shop.css";
+import banner from "../../assets/banner.jpg"
 
 export const Shop = ({searchProduct}) => {
 
 
   return (
     <div className="shop">
-        <div className="shopTitle">
-            <h1>Best product</h1>
+        <div className="shop-banner">
+          <img src={banner} alt='banner'></img>
         </div>
         <div className="products">
         {PRODUCTS.filter((val) => {
