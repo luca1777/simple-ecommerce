@@ -1,10 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import "./navbar.css";
-import logo from "./logo/logo.jpeg";
+import logo from "../assets/GETWEAR.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
-import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 
 export const Navbar = ({searchProps}) => {
@@ -23,9 +22,8 @@ export const Navbar = ({searchProps}) => {
         </button>
       </form>
       <div className="links">
-        <div className="user">
-          <FontAwesomeIcon icon={faUser} />
-          <p>Contact</p>
+        <div className="categories">
+          <p>CATEGORIES</p>
         </div>
         <div className="cart">
           <Link to="/cart">

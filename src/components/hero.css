@@ -1,0 +1,103 @@
+.grid-container {
+    display: grid;
+    height: 35rem;
+    width: 65rem;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 'one two three' 'one two four';
+    gap: 1.3rem;
+    margin-top: 1.3rem;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.home-banner {
+    padding-top: 5rem;
+    padding-bottom: 8rem;
+}
+
+.featured {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.grids-description {
+    position: absolute;
+    color: white;
+    font-size: 3.8rem;
+    font-weight: 600;
+}
+
+.featured img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+.grid-one {
+    grid-area: one;
+}
+
+.grid-two {
+    grid-area: two;
+}
+
+.grid-four {
+    grid-area: four;
+}
+
+.grid-three {
+    grid-area: three;
+}
+
+.lil-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in;
+}
+
+#img1:hover {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+#img2:hover {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+#img3:hover {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+#img4:hover {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+@media (max-width:750px) {
+    .grid-container {
+        height: 80rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 2fr 2fr 1fr;
+        grid-template-areas:
+            "two two"
+            "one one"
+            "three four";
+        grid-gap: 13px;
+        gap: 13px;
+        padding-top: 2rem;
+        padding-left: 0.7rem;
+        padding-right: 0.7rem;
+    }
+}
