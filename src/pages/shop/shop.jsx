@@ -3,6 +3,7 @@ import { Product } from './product';
 import { PRODUCTS } from "../../products" 
 import { Hero } from "../../components/hero"
 import { NewProducts } from '../../components/new-products';
+import { Banner } from "../../components/banner.jsx";
 
 export const Shop = ({searchProduct}) => {
   const filteredProducts = PRODUCTS.filter(val => val.productName.toLowerCase().includes(searchProduct.toLowerCase()));
@@ -23,6 +24,7 @@ export const Shop = ({searchProduct}) => {
         <>
           <Hero />
           <NewProducts />
+          <Banner />
         </>
       )}
     </div>
