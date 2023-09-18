@@ -8,7 +8,6 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { useRef } from "react";
 
 export const Navbar = ({searchProps}) => {
-
   const {handleSearchInput, handleSearchButton, searchInput} = searchProps;
   const navRef = useRef();
 
@@ -16,9 +15,14 @@ export const Navbar = ({searchProps}) => {
     navRef.current.classList.toggle("responsive_nav");
   }
 
+  const handleLogoClick = (event) => {
+    event.preventDefault(); 
+    window.location.href = "/";
+  }
+
   return (
     <div className="navbar">
-      <Link to="/">
+      <Link to="/" onClick={handleLogoClick}>
         <img src={logo} alt="logo" />
       </Link>
       <form onSubmit={handleSearchButton} className="search-bar">
