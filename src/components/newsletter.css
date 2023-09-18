@@ -1,0 +1,33 @@
+.news-container {
+    background-color: #191919;
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.news-container h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.news-text {
+    text-align: center;
+}
+
+.news-container input {
+    font-size: 1rem;
+    padding: .4rem 1rem;
+    margin-right: .7rem;
+    border: none;
+    outline: none;
+}
+
+.news-container button {
+    font-size: 1rem;
+    padding: .4rem 1rem;
+    border: none;
+    cursor: pointer; 
+}
