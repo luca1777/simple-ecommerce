@@ -1,0 +1,36 @@
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 120px;
+    background-color: black;
+    gap: 3rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 3rem;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-text {
+    color: white;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .footer-links {
+        gap: 1rem;
+    }
+}

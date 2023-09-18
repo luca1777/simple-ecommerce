@@ -6,6 +6,7 @@ import { NewProducts } from '../../components/new-products';
 import { Banner } from "../../components/banner.jsx";
 import { TrendingSlider } from "..//../components/trending-slider";
 import { Newsletter } from "..//../components/newsletter";
+import { Footer } from '../../components/footer';
 
 export const Shop = ({searchProduct}) => {
   const filteredProducts = PRODUCTS.filter(val => val.productName.toLowerCase().includes(searchProduct.toLowerCase()));
@@ -29,6 +30,7 @@ export const Shop = ({searchProduct}) => {
           <Banner />
           <TrendingSlider />
           <Newsletter />
+          <Footer />
         </>
       )}
     </div>
