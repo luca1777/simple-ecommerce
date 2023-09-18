@@ -1,0 +1,68 @@
+.trending {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    width: 1330px;
+}
+
+.row-container-slider {
+    display: flex;
+    gap: 2.2rem;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    position: relative;
+    padding: 1rem 0;
+}
+
+.row-container-slider::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.trending h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.titleAndBtns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slider-btns button {
+    color: white;
+    background-color: #373737;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    border: none;
+    height: 3rem;
+    width: 3rem;
+    cursor: pointer;
+    transition: all 0.1s ease-in;
+}
+
+.slider-btns {
+    display: flex;
+    gap: .4rem;
+}
+
+.slider-btns button:hover {
+    background-color: black;
+}
+
+@media (max-width: 1500px) {
+    .slider-container {
+        width: 100%;  
+        padding: 0 20px;
+    }
+}
