@@ -6,7 +6,7 @@
     0 0 2px rgb(0 0 0 / 7%);
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     position: fixed;
     top: 0;
@@ -20,10 +20,11 @@
 }
 
 .navbar a img {
-    width: 180px;
-    height: 50px;
+    width: 196px;
+    height: 66px;
     padding-left: 1rem;
     padding-top: 1rem;
+    margin-right: 40px;
 }
 
 .search-bar {
@@ -34,6 +35,7 @@
     border-radius: 60px;
     padding: 6px 15px;
     border: 1px solid grey;
+    margin: auto;
 }
 
 .search-bar input {
@@ -57,13 +59,18 @@
 
 .links {
     margin-right: 20px;
+    margin-left: 40px;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
 }
 
-.cart a {
+.cart-icon {
+    margin: 0;
+}
+
+.cart-icon a {
     text-decoration: none;
     color: black;
     margin-left: 30px;
@@ -76,16 +83,24 @@
     align-items: center;
     font-size: 20px;
     cursor: pointer;
-    padding-left: 30px;
 }
 
 .categories p{
-    margin-left: 8px;
     font-weight: 500;
 }
 
+.nav-btn {
+    padding: 5px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 24px;
+    display: none;
+}
 
-@media (max-width: 600px) {
+
+@media (max-width: 750px) {
     .navbar {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -96,9 +111,14 @@
         height: auto;
         padding-bottom: 5px;
     }
+
+    .cart a {
+        margin: 0;
+    }
     
     .navbar a {
         grid-area: div1;
+        font-size: 2rem;
     }
 
     .navbar a img {
@@ -108,12 +128,45 @@
       
     .search-bar {
         grid-area: div2;
-        width: auto;
-        margin-left: 0.7rem;
-        margin-right: 0.7rem;
+        width: 90%;
+        margin: auto;
     }
       
     .links {
+        display: none;
         grid-area: div3;
+    }
+
+    .nav-btn {
+        display: block;
+        margin-left: auto;
+        margin-right: 15px;
+    }
+
+    .responsive_nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;            
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;                              
+        background-color: blueviolet;
+        margin: 0;
+    }
+
+    .responsive_nav .nav-btn {
+        display: none;
+    }
+
+    .responsive_nav .nav-close-btn {
+        display: block;
+        position: absolute;
+        top: 2rem;
+        right: 1.5rem;
+
     }
 }

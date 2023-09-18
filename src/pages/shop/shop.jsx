@@ -1,29 +1,32 @@
 import React from 'react';
 import { Product } from './product';
-import "./shop.css";
 import { PRODUCTS } from "../../products" 
 import { Hero } from "../../components/hero"
+import { NewProducts } from '../../components/new-products';
 
 export const Shop = ({searchProduct}) => {
+  const filteredProducts = PRODUCTS.filter(val => val.productName.toLowerCase().includes(searchProduct.toLowerCase()));
 
   return (
     <div className="shop">
-        <div className="shop-banner">
-          <Hero />
+      {searchProduct ? (
+        <div className="search-products">
+          {filteredProducts.length > 0 ? (
+            filteredProducts.map((product) => (
+              <Product key={product.id} data={product} />
+            ))
+          ) : (
+            <p>Doesn't exist any product with that name.</p>
+          )}
         </div>
-        <div className="products">
-        {PRODUCTS.filter((val) => {
-          if (searchProduct === "") {
-            return val;
-          } else if (val.productName.toLowerCase().includes(searchProduct.toLowerCase())) {
-            return val;
-          } else {
-            return null;
-          }
-        }).map((product) => (
-          <Product key={product.id} data={product} />
-        ))}
-      </div>
+      ) : (
+        <>
+          <Hero />
+          <NewProducts />
+        </>
+      )}
     </div>
-  )
+  );
 }
+
+
