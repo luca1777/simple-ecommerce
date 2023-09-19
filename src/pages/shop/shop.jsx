@@ -29,10 +29,10 @@ export const Shop = ({searchProduct}) => {
           <NewProducts />
           <Banner />
           <TrendingSlider />
-          <Newsletter />
-          <Footer />
         </>
       )}
+      <Newsletter />
+      <Footer />
     </div>
   );
 }
