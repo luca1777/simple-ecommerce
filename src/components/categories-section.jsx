@@ -1,12 +1,9 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
+import { ShopContext } from '../context/shop-context';
 
 export const CategoriesSection = () => {
-  const [btnName, setBtnName] = useState("All");
-
-  const handleBtnName = (e) => {
-    setBtnName(e);
-  };
+  const { btnName, handleBtnName } =useContext(ShopContext);
 
   return (
     <div className='container-catego-section'>

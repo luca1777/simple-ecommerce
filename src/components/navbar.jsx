@@ -38,7 +38,7 @@ export const Navbar = ({searchProps}) => {
       </form>
       <div className="links" ref={navRef}>
         <div className="categories">
-          <Link to="/categories/all">CATEGORIES</Link>
+          <Link to="/categories/all" onClick={showNavbar}>CATEGORIES</Link>
         </div>
         <div className="cart-icon" onClick={showNavbar}>
           <Link to="/cart">
