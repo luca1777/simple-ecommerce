@@ -5,6 +5,12 @@ import {Navbar} from "./components/navbar";
 import { Shop } from './pages/shop/shop';
 import { Cart } from './pages/cart/cart';
 import { ShopContextProvider } from './context/shop-context';
+import { Categories } from './pages/categories/categories';
+import { All } from './components/categories-pages/all';
+import { Hoodies } from './components/categories-pages/hoodies';
+import { Tshirts } from './components/categories-pages/tshirts';
+import { Pants } from './components/categories-pages/pants';
+import { Shoes } from './components/categories-pages/shoes';
 
 function App() {
   const [searchInput, setSearchInput] = useState("");
@@ -35,6 +41,13 @@ function App() {
           <Routes>
             <Route path="/" element={<Shop searchProduct={searchProduct} />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/categories" element={<Categories />}>
+              <Route path='all' element={<All />}></Route>
+              <Route path='hoodies' element={<Hoodies />}></Route>
+              <Route path='t-shirts' element={<Tshirts />}></Route>
+              <Route path='pants' element={<Pants />}></Route>
+              <Route path='shoes' element={<Shoes />}></Route>
+            </Route>
           </Routes>
         </Router>
       </ShopContextProvider>
