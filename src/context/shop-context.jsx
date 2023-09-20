@@ -1,4 +1,4 @@
-import React, {createContext, useState} from 'react';
+import React, {createContext, useEffect, useState} from 'react';
 import { PRODUCTS } from '../products';
 
 export const ShopContext = createContext(null);
@@ -12,7 +12,9 @@ const getDefaultCart = () => {
 };
 
 export const ShopContextProvider = (props) => {
-    const [cartItems, setCartItems] = useState(getDefaultCart());
+    const storedCart = localStorage.getItem("cartItems");
+    const initialCart = storedCart ? JSON.parse(storedCart) : getDefaultCart();
+    const [cartItems, setCartItems] = useState(initialCart);
     const [btnName, setBtnName] = useState("All");
 
     const handleBtnName = (e) => {
@@ -34,6 +36,23 @@ export const ShopContextProvider = (props) => {
     const addToCart = (itemId) => {
         setCartItems((prev) => ({...prev, [itemId]: prev[itemId] + 1}));
     };
+
+    useEffect(() => {
+        const json = localStorage.getItem("cartItems");
+        console.log("Retrieved from localStorage:", json);
+    
+        if(json) {
+            const savedCart = JSON.parse(json);
+            console.log("Parsed cart from localStorage:", savedCart);
+            setCartItems(savedCart);
+        }
+    }, []);
+
+    useEffect(() => {
+        const json = JSON.stringify(cartItems);
+        console.log("Saving to localStorage:", json);
+        localStorage.setItem("cartItems", json);
+    }, [cartItems]);
 
     const removeFromCart = (itemId) => {
         setCartItems((prev) => ({...prev, [itemId]: prev[itemId] - 1}));
