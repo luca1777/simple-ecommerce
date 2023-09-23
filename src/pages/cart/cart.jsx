@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { PRODUCTS } from '../../products'
 import { ShopContext } from '../../context/shop-context';
 import { CartItem } from './cart-item';
@@ -11,9 +11,20 @@ export const Cart = () => {
   const {cartItems, getTotalCartAmount} = useContext(ShopContext);
   const totalAmount = getTotalCartAmount();
   const navigate = useNavigate();
+  const [checkoutNotify, setCheckoutNotify] = useState(false);
+
+  const showNotify = () => {
+    setCheckoutNotify(!checkoutNotify);
+  }
 
   return (
     <>
+      <div
+        onAnimationEnd={() => setCheckoutNotify(false)}
+        className={`notify ${checkoutNotify ? "slide-in" : ""}`}
+      >
+        <p>Sorry, this page is just for demo. You are not capable to buy.</p>
+      </div>
       <div className="cart">
         <div className={totalAmount > 0 ? "" : "text-full-cart"}>
           <h1>Your Cart Items</h1>
@@ -31,7 +42,7 @@ export const Cart = () => {
           <div className="checkout">
             <p>Subtotal: {totalAmount} RON</p>
             <button onClick={() => navigate("/")}>Continue Shopping</button>
-            <button>Checkout</button>
+            <button onClick={showNotify}>Checkout</button>
           </div>
         ) : (
           <div className='text-empty-cart'>

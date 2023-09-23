@@ -102,9 +102,9 @@
     padding: 1.2rem 2.2rem;
     z-index: 999999999;
     font-size: 1rem;
-    position: absolute;
-    transform: translate(-50%);
-    top: -100%;
+    position: fixed;
+    transform: translateX(-50%);
+    top: -20vh;
     left: 50%;
 }
 
@@ -118,26 +118,23 @@
 
 @keyframes slidein {
     0% {
-        top: -100%;
+        top: -10vh;
     }
 
     40% {
-        top: 90px;
+        top: 20vh;
     }
 
     60% {
-        top: 90px;
+        top: 20vh;
     }
 
     100% {
-        top: -100%;
+        top: -10vh;
     }
 }
 
 @media (max-width: 750px) {
-    .notify {
-        margin-top: 300px;
-    }
     .product-div {
         display: flex;
         flex-direction: column;
