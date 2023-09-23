@@ -42,7 +42,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Shop searchProduct={searchProduct} />} />
             <Route path="/cart" element={<Cart />} />
-            <Route path="/categories" element={<Categories />}>
+            <Route path="/categories" element={<Categories searchProduct={searchProduct} />}>
               <Route path='all' element={<All />}></Route>
               <Route path='hoodies' element={<Hoodies />}></Route>
               <Route path='t-shirts' element={<Tshirts />}></Route>
