@@ -21,39 +21,40 @@ export const ShopContextProvider = (props) => {
       setBtnName(e);
     };
 
-    const getTotalCartAmount = () => {
-        let totalAmount = 0;
-        for (const itemCartId in cartItems) {
-            if (cartItems[itemCartId] > 0) {
-                let itemInfo = PRODUCTS.find((product) => product.id === Number(itemCartId));
-                totalAmount = totalAmount + cartItems[itemCartId] * itemInfo.price;
-            }
-        }
-
-        return totalAmount;
-    };
-
     const addToCart = (itemId) => {
         setCartItems((prev) => ({...prev, [itemId]: prev[itemId] + 1}));
     };
-
+    
     useEffect(() => {
         const json = localStorage.getItem("cartItems");
         console.log("Retrieved from localStorage:", json);
-    
+        
         if(json) {
             const savedCart = JSON.parse(json);
             console.log("Parsed cart from localStorage:", savedCart);
             setCartItems(savedCart);
         }
     }, []);
-
+    
     useEffect(() => {
         const json = JSON.stringify(cartItems);
         console.log("Saving to localStorage:", json);
         localStorage.setItem("cartItems", json);
     }, [cartItems]);
 
+    const getTotalCartAmount = () => {
+        let totalAmount = 0;
+        console.log("Am intrat in functie")
+        for (const itemCartId in cartItems) {
+            if (cartItems[itemCartId] > 0) {
+                let itemInfo = PRODUCTS.find((product) => product.id === Number(itemCartId));
+                totalAmount = totalAmount + cartItems[itemCartId] * itemInfo.price;
+            } 
+        }
+
+        return totalAmount;
+    };
+    
     const removeFromCart = (itemId) => {
         setCartItems((prev) => ({...prev, [itemId]: prev[itemId] - 1}));
     };

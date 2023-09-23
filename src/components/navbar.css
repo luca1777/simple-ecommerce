@@ -117,6 +117,10 @@
     .cart a {
         margin: 0;
     }
+
+    .cart-icon a {
+        margin: 0;
+    }
     
     .navbar a {
         grid-area: div1;
@@ -156,7 +160,7 @@
         align-items: center;
         justify-content: center;
         gap: 1.5rem;                              
-        background-color: blueviolet;
+        background-color: white;
         margin: 0;
     }
 

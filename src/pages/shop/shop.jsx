@@ -37,4 +37,6 @@ export const Shop = ({searchProduct}) => {
   );
 }
 
+export default Shop;
+
 

@@ -58,6 +58,7 @@
     cursor: pointer;
     border: 2px solid black;
     transition: all 0.15s;
+    border-radius: 5px;
 }
 
 .text-side button:hover {

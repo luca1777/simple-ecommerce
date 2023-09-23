@@ -23,6 +23,7 @@
     margin-right: .7rem;
     border: none;
     outline: none;
+    border-radius: 5px;
 }
 
 .news-container button {
@@ -30,4 +31,5 @@
     padding: .4rem 1rem;
     border: none;
     cursor: pointer; 
+    border-radius: 5px;
 }

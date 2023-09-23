@@ -11,6 +11,7 @@ import { Hoodies } from './components/categories-pages/hoodies';
 import { Tshirts } from './components/categories-pages/tshirts';
 import { Pants } from './components/categories-pages/pants';
 import { Shoes } from './components/categories-pages/shoes';
+import { ProductPage } from './pages/shop/product-page';
 
 function App() {
   const [searchInput, setSearchInput] = useState("");
@@ -48,6 +49,7 @@ function App() {
               <Route path='pants' element={<Pants />}></Route>
               <Route path='shoes' element={<Shoes />}></Route>
             </Route>
+            <Route path="categories/product/:id" element={<ProductPage />} />
           </Routes>
         </Router>
       </ShopContextProvider>
