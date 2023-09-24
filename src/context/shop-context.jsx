@@ -27,24 +27,20 @@ export const ShopContextProvider = (props) => {
     
     useEffect(() => {
         const json = localStorage.getItem("cartItems");
-        console.log("Retrieved from localStorage:", json);
         
         if(json) {
             const savedCart = JSON.parse(json);
-            console.log("Parsed cart from localStorage:", savedCart);
             setCartItems(savedCart);
         }
     }, []);
     
     useEffect(() => {
         const json = JSON.stringify(cartItems);
-        console.log("Saving to localStorage:", json);
         localStorage.setItem("cartItems", json);
     }, [cartItems]);
 
     const getTotalCartAmount = () => {
         let totalAmount = 0;
-        console.log("Am intrat in functie")
         for (const itemCartId in cartItems) {
             if (cartItems[itemCartId] > 0) {
                 let itemInfo = PRODUCTS.find((product) => product.id === Number(itemCartId));
@@ -52,6 +48,7 @@ export const ShopContextProvider = (props) => {
             } 
         }
 
+        console.log(totalAmount);
         return totalAmount;
     };
     
