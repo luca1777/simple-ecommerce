@@ -13,7 +13,7 @@
     align-items: center;
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
     border-radius: 25px;
-    margin: 25px;
+    margin: 25px 0;
 }
 
 .cartItem img {
@@ -118,6 +118,7 @@
     }
     .cartItem {
         width: auto;
+        margin: 25px 5px;
     }
     .description p:nth-child(1) {
         font-weight: 400;
